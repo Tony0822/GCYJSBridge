@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>H5测试界面</title>
+        <style>
+            li {
+                height:50px;
+            }
+        </style>
+    <script type='text/javascript'>
+    function setupWebViewJavascriptBridge(callback) {	//ios回传中奖内容方法
+        if(window.YdBridge) {
+            return callback(YdBridge);
+        }
+        if(window.WVJBCallbacks) {
+            return window.WVJBCallbacks.push(callback);
+        }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'gs-bridge://__BRIDGE_LOADED__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function() {
+                   document.documentElement.removeChild(WVJBIframe)
+                   }, 0)
+    }
+    setupWebViewJavascriptBridge(function(bridge) { //如果是在ios环境内，调用ios提供的方法，获取ios传递的奖品数据对象
+<!--                                 bridge.registerHandler('PrizeListHandler2', function(data, responseCallback) {-->
+<!--                                                        alert('收到App数据:'+data);-->
+<!--                                                    responseCallback(data);-->
+<!--                                                    })-->
+<!--                                 bridge.registerHandler('PrizeListHandler3', function(data) {-->
+<!--                                                        alert('收到App信号');-->
+<!--                                                        })-->
+                                 })
+
+    var click1 = function(event){
+        var bridge = window.JSBridge;
+        bridge.callHandler('test', "Hello App", function(data) {
+                           alert(data);
+                           })
+    }
+    var click2 = function(event){
+        var bridge = window.JSBridge;
+        bridge.callHandler('test1', "123", function(data) {
+                           alert(data);
+                           })
+    }
+
+    </script>
+</head>
+
+<body>
+    <br/><br/>
+    This is a HTML page!  回调测试！！！
+    <br/>
+    <br/>
+    <div>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="click1()">传递数据给App</a></li>
+            <li><a href="javascript:void(0);" onclick="click2()">获取App数据</a></li>
+            <li><a href="tel:123456789">拨打电话</a></li>
+        </ul>
+    </div>
+    <br/>
+    <br/>
+</body>
+
+
+</html>

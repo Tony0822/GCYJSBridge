@@ -15,6 +15,10 @@
 		3E818E3D2091D27600AFDC8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E818E3C2091D27600AFDC8E /* main.m */; };
 		3E818E472091D27600AFDC8E /* CGYJSBridgeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E818E462091D27600AFDC8E /* CGYJSBridgeDemoTests.m */; };
 		3E818E522091D27600AFDC8E /* CGYJSBridgeDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E818E512091D27600AFDC8E /* CGYJSBridgeDemoUITests.m */; };
+		3E818E622091D76E00AFDC8E /* bridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3E818E602091D76E00AFDC8E /* bridge.js.txt */; };
+		3E818E632091D76E00AFDC8E /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E818E612091D76E00AFDC8E /* index.html */; };
+		3E818E672091D92500AFDC8E /* BaseJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E818E662091D92500AFDC8E /* BaseJsonUtil.m */; };
+		3E818E6A2091DC8B00AFDC8E /* JSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E818E692091DC8B00AFDC8E /* JSBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,12 @@
 		3E818E4D2091D27600AFDC8E /* CGYJSBridgeDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CGYJSBridgeDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E818E512091D27600AFDC8E /* CGYJSBridgeDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGYJSBridgeDemoUITests.m; sourceTree = "<group>"; };
 		3E818E532091D27600AFDC8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E818E602091D76E00AFDC8E /* bridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bridge.js.txt; sourceTree = "<group>"; };
+		3E818E612091D76E00AFDC8E /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		3E818E652091D92500AFDC8E /* BaseJsonUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseJsonUtil.h; sourceTree = "<group>"; };
+		3E818E662091D92500AFDC8E /* BaseJsonUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseJsonUtil.m; sourceTree = "<group>"; };
+		3E818E682091DC8B00AFDC8E /* JSBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridge.h; sourceTree = "<group>"; };
+		3E818E692091DC8B00AFDC8E /* JSBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,8 @@
 		3E818E2C2091D27300AFDC8E /* CGYJSBridgeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3E818E642091D8B700AFDC8E /* Common */,
+				3E818E5F2091D74F00AFDC8E /* JSBridge */,
 				3E818E2D2091D27300AFDC8E /* AppDelegate.h */,
 				3E818E2E2091D27300AFDC8E /* AppDelegate.m */,
 				3E818E302091D27300AFDC8E /* ViewController.h */,
@@ -130,6 +142,26 @@
 				3E818E532091D27600AFDC8E /* Info.plist */,
 			);
 			path = CGYJSBridgeDemoUITests;
+			sourceTree = "<group>";
+		};
+		3E818E5F2091D74F00AFDC8E /* JSBridge */ = {
+			isa = PBXGroup;
+			children = (
+				3E818E602091D76E00AFDC8E /* bridge.js.txt */,
+				3E818E612091D76E00AFDC8E /* index.html */,
+				3E818E682091DC8B00AFDC8E /* JSBridge.h */,
+				3E818E692091DC8B00AFDC8E /* JSBridge.m */,
+			);
+			path = JSBridge;
+			sourceTree = "<group>";
+		};
+		3E818E642091D8B700AFDC8E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3E818E652091D92500AFDC8E /* BaseJsonUtil.h */,
+				3E818E662091D92500AFDC8E /* BaseJsonUtil.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +267,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E818E632091D76E00AFDC8E /* index.html in Resources */,
 				3E818E3A2091D27600AFDC8E /* LaunchScreen.storyboard in Resources */,
 				3E818E372091D27600AFDC8E /* Assets.xcassets in Resources */,
 				3E818E352091D27300AFDC8E /* Main.storyboard in Resources */,
+				3E818E622091D76E00AFDC8E /* bridge.js.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E818E672091D92500AFDC8E /* BaseJsonUtil.m in Sources */,
 				3E818E322091D27300AFDC8E /* ViewController.m in Sources */,
+				3E818E6A2091DC8B00AFDC8E /* JSBridge.m in Sources */,
 				3E818E3D2091D27600AFDC8E /* main.m in Sources */,
 				3E818E2F2091D27300AFDC8E /* AppDelegate.m in Sources */,
 			);
@@ -434,7 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z899C473MY;
+				DEVELOPMENT_TEAM = LT4PPLS37C;
 				INFOPLIST_FILE = CGYJSBridgeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z899C473MY;
+				DEVELOPMENT_TEAM = LT4PPLS37C;
 				INFOPLIST_FILE = CGYJSBridgeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
